@@ -21,7 +21,7 @@ public class Card {
 	
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	 private int id;
 	
 	private String title;
 	
@@ -47,19 +47,6 @@ public class Card {
 	@NotBlank
 	private User user;
 	
-	
-
-	public Card(Integer id, String title, String description, @NotBlank boolean notification, @NotBlank Date date_add,
-			@NotBlank Date date_deadline, @NotBlank Date date_modify, @NotBlank User user) {
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.notification = notification;
-		this.date_add = date_add;
-		this.date_deadline = date_deadline;
-		this.date_modify = date_modify;
-		this.user = user;
-	}
 
 	public User getUser() {
 		return user;

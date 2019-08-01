@@ -28,15 +28,6 @@ public class User {
 	private int id;
 
 
-	
-
-	public User(@NotBlank String name, int token, @NotBlank String email, @NotBlank int id) {
-		this.name = name;
-		this.token = token;
-		this.email = email;
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}

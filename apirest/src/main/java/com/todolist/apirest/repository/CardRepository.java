@@ -7,4 +7,6 @@ import com.todolist.apirest.models.Card;
 
 public interface CardRepository  extends JpaRepository<Card,Integer>{
 
+	Card findById(int id);
+	
 }
