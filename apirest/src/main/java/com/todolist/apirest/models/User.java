@@ -1,6 +1,7 @@
 package com.todolist.apirest.models;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,10 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.todolist.apirest.models.Card;
+
 @Entity
 @Table(name="USER")
 public class User {
-	
+	private User user;
 	@NotBlank
 	private String name;
 	
@@ -23,13 +26,17 @@ public class User {
 	private  String email;
 	
 	@Id
-	@NotBlank
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private int id;
 
 
 	public String getName() {
 		return name;
+	}
+
+	@OneToMany(targetEntity = Card.class, mappedBy ="User", fetch = FetchType.LAZY)
+	public User getUser(){
+		return user;
 	}
 
 	public void setName(String name) {
