@@ -17,8 +17,13 @@ import java.util.List;
 @RequestMapping(value = "/api/card")
 public class CardResource {
 
+	@RequestMapping("/")
+    public String home(){
+        return "Welcome Cards Api";
+    }
+
 	@Autowired
-	CardRepository cardrepository;
+	private CardRepository cardrepository;
 	
 	@GetMapping("/cards")
 	public List<Card> ListCards(){
