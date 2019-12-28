@@ -20,7 +20,7 @@ import java.util.Date;
 public class Card {
 	
 	 @Id
-	 @GeneratedValue(strategy=GenerationType.AUTO)
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private int id;
 	
 	private String title;
@@ -43,8 +43,7 @@ public class Card {
 	private Date date_modify;
 	
 	@ManyToOne
-	@JoinColumn
-	@NotBlank
+	@JoinColumn(name="user_id", referencedColumnName = "id",insertable = false, updatable = false)
 	private User user;
 	
 
